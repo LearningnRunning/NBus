@@ -18,8 +18,9 @@ def join():
     id = request.form['id']
     pwd = request.form['pwd']
     name = request.form['name']
+    pnum = request.form['pnum']
     email = request.form['email']
-    service.addMember(Member(id=id,pwd=pwd,name=name,email=email))
+    service.addMember(Member(id=id,pwd=pwd,name=name,pnum=pnum,email=email))
     return render_template('index.html')
 
 # 로그인
@@ -44,7 +45,7 @@ def logout():
     session.pop('loginid')
     return render_template('index.html')
 
-# 내정보수정
+# 내정보수정 (수정 필요)
 @bp.route('/myinfo', methods=['GET'])
 def editForm():
     loginid = session['loginid']
@@ -56,14 +57,19 @@ def edit():
     id = request.form['id']
     pwd = request.form['pwd']
     name = request.form['name']
+    pnum = request.form['pnum']
     email = request.form['email']
-    service.addMember(Member(id=id, pwd=pwd, name=name, email=email))
+    service.editMember(Member(id=id, pwd=pwd, name=name, pnum=pnum, email=email))
+    #service.addMember(Member(id=id, pwd=pwd, name=name, pnum=pnum, email=email))
     return render_template('index.html')
 
 # 탈퇴
 @bp.route('/out', methods=['GET'])
+def outForm():
+    return render_template('member/logout.html')
+
+@bp.route('/out', methods=['POST'])
 def out():
     loginid = session['loginid']
     service.delMember(id=loginid)
     return redirect('/member/logout')
-
