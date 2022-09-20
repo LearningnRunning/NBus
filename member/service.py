@@ -10,7 +10,7 @@ class MemberService:
     def addMember(self, m:Member):
         self.dao.insert(m)
 
-    def getById(self, id:str)->Member: #타입 힌트 
+    def getById(self, id:str)->Member:
         return self.dao.select(id)
 
     # 삭제

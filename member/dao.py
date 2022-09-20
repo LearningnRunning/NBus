@@ -7,7 +7,7 @@ class MemberDao:
         self.conn = None
 
     def connect(self):
-        self.conn = pymysql.connect(host='localhost', user='root', password='1234', db='javawork', charset='utf8')
+        self.conn = pymysql.connect(host='localhost', user='root', password='1234', db='nbus', charset='utf8')
 
     def disconn(self):
         self.conn.close()
@@ -21,10 +21,10 @@ class MemberDao:
         cursor = self.conn.cursor()
 
         # 3. 실행할 sql문 정의
-        sql = 'insert into member(id, pwd, name,email) values(%s, %s, %s, %s)'
+        sql = 'insert into member(id, pwd, name, pnum, email) values(%s, %s, %s, %s, %s)'
 
         # 4. sql 문에 %s를 사용했다면 각 자리에 들어갈 값을 튜플로 정의
-        d = (a.id, a.pwd, a.name,a.email)
+        d = (a.id, a.pwd, a.name, a.pnum, a.email)
 
         # 5. sql 실행(실행할 sql, %s매칭한 튜플)
         cursor.execute(sql, d)
@@ -45,14 +45,12 @@ class MemberDao:
             cursor.execute(sql, d) #sql 실행
             row = cursor.fetchone() # fetchone() : 현재 커서 위치의 한 줄 추출
             if row:
-                return Member(row[0],row[1],row[2],row[3])
+                return Member(row[0],row[1],row[2],row[3],row[4])
 
         except Exception as e:
             print(e)
         finally:
             self.disconn()
-
-
 
     def selectByName(self, name:str): #name 기준 검색, 여러개 검색
         res=[]
@@ -62,7 +60,7 @@ class MemberDao:
             sql = 'select*from member where name like %s' # like 활용
             d = (name,)
             cursor.execute(sql, d)  # sql 실행
-            res =[Member(row[0], row[1], row[2], row[3]) for row in cursor]
+            res =[Member(row[0], row[1], row[2], row[3], row[4]) for row in cursor]
             # for row in cursor:
             #     res.append(Addr(row[0], row[1], row[2], row[3]))
             return res
@@ -93,9 +91,9 @@ class MemberDao:
         try:
             self.connect()  # db연결
             cursor = self.conn.cursor()  # 사용할 커서 객체 생성
-            sql = 'update member set pwd=%s, name=%s,email=%s where id = %s'
+            sql = 'update member set pwd=%s, name=%s, pnum=%s, email=%s where id = %s'
 
-            d = (a.pwd,a.name,a.email,a.id)
+            d = (a.pwd,a.name,a.pnum,a.email,a.id)
             cursor.execute(sql, d)  # sql 실행
             self.conn.commit()
 
