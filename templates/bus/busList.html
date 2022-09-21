@@ -5,14 +5,12 @@
     <title>Title</title>
 </head>
 <body>
-<h3>버스 노선 검색 결과</h3>
+<h3>정류소 검색 결과</h3>
 <table border="1">
-    <tr><th>id</th><th>num</th><th>기점</th><th>종점</th><th>첫차시간</th><th>막차시간</th><th>간격</th></tr>
+    <tr><th>arsId@stId</th>
 {% for b in res %}
 <tr>
-    <td><a href="/bus/stationinfo/{{b.busid}}">{{b.busid}}</a></td>
-    <td>{{b.busnm}}</td><td>{{b.ststat}}</td><td>{{b.edstat}}</td>
-    <td>{{b.sttime}}</td><td>{{b.edtime}}</td><td>{{b.term}}</td>
+    <td><a href="/bus/stationinfo/{{b.arsId}}">{{b.arsId}}</a></td>
 </tr>
 {% endfor %}
     </table>

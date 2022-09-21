@@ -1,43 +1,15 @@
 class Bus1:
-    def __init__(self, arsId=None,stid=None):
-
-        self.stid = stid # 정류소 id_1
+    def __init__(self, arsId=None):
         self.arsId = arsId # 정류소 id
 
     def __str__(self):
         s = ''
-        s += '정류소id' + self.stid + '\n'
         s += '정류소고유번호' + self.arsId + '\n'  # 확인 필요
 
         return s
 
 
 class Bus2:
-    def __init__(self, busRouteId=None, busRouteNm=None):
-        self.busRouteId = busRouteId # 노선id(버스id)
-        self.busRouteNm = busRouteNm # 노선명 rtNm
-
-
-
-    def __str__(self):
-        s = ''
-        s += '노선id' + self.busRouteId + '\n'
-        s += '노선명' + self.busRouteNm + '\n' # 노선명 rtNm
-        return s
-
-class Bus3:
-    def __init__(self,busRouteId=None,seq=None):
-
-        self.busRouteId = busRouteId # 노선id(버스id)
-        self.seq = seq # 순번 ord
-
-    def __str__(self):
-        s = ''
-        s += '노선id' + self.busRouteId + '\n'
-        s += '순번: ' + self.seq + '\n'  # ord
-        return s
-
-class Bus4:
     def __init__(self,  stNm=None,rtNm=None, firstTm=None,lastTm=None, term=None,
                  vehId1=None,plainNo1=None, busType1=None, arrmsg1=None, reride_Num1=None, isLast1=None,
                  vehId2=None,plainNo2=None, busType2=None, arrmsg2=None, reride_Num2=None, isLast2=None):
