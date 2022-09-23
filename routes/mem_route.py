@@ -6,7 +6,7 @@ from member.vo import Member
 service = MemberService()
 
 # 블루 프린트 생성, 블루 프린트는 라우트(요청 url) 등록 객체.
-bp = Blueprint('mem', __name__, url_prefix='/member')
+bp = Blueprint('member', __name__, url_prefix='/member')
 # bp = Blueprint('이름', __name__, url_prefix='/자동으로 붙을 주소')
 
 @bp.route('/join', methods=['GET'])
