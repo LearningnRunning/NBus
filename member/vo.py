@@ -7,4 +7,4 @@ class Member:
         self.email = email
 
     def __str__(self): #toString()
-        return 'id:'+self.id + ' / pwd :'+self.pwd+' / '+'name : '+self.name+ ' / pnum :'+self.pnum+' / '+'email :'+self.email
+        return 'id:'+self.id + ' / '+'pwd :'+self.pwd+' / '+'name : '+self.name+' / '+'pnum : '+self.pnum+' / '+'email :'+self.email

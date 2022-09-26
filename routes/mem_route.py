@@ -1,4 +1,4 @@
-from flask import Blueprint, render_template, request, session, redirect
+from flask import Blueprint, render_template, request, session, redirect, url_for
 
 from member.service import MemberService
 from member.vo import Member
@@ -34,15 +34,8 @@ def login():
     pwd = request.form['pwd']
     m = service.getById(id=id)
     if m != None and m.pwd == pwd:
-        session['flag']=True
-        session['loginid']=id
-    return render_template('index.html')
-
-#로그아웃
-@bp.route('/logout', methods=['GET'])
-def logout():
-    session.pop('flag')
-    session.pop('loginid')
+        session['flag'] = True
+        session['loginid'] = id
     return render_template('index.html')
 
 # 내정보수정 (수정 필요)
@@ -60,7 +53,13 @@ def edit():
     pnum = request.form['pnum']
     email = request.form['email']
     service.editMember(Member(id=id, pwd=pwd, name=name, pnum=pnum, email=email))
-    #service.addMember(Member(id=id, pwd=pwd, name=name, pnum=pnum, email=email))
+    return render_template('index.html')
+
+#로그아웃
+@bp.route('/logout', methods=['GET'])
+def logout():
+    session.pop('flag')
+    session.pop('loginid')
     return render_template('index.html')
 
 # 탈퇴
