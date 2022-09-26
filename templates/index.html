@@ -16,13 +16,12 @@
 </form><br/>
 {% if session['flag'] %}
     <a href="/member/logout">로그아웃</a><br/>
-    <a href="/member/myinfo">내정보확인</a><br/>
+    <a href="/member/myinfo">정보수정</a><br/>
+    <a href="/reserve/reserveinfo">예약확인</a><br/>
     <a href="/member/out">탈퇴</a><br/>
 {% else %}
     <a href="/member/login">로그인</a>
     <a href="/member/join">회원가입</a>
 {% endif %}
-
-
 </body>
 </html>
