@@ -4,18 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="26a38edf-41c9-44eb-a54d-766ff0246617" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/profiles_settings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/profiles_settings.xml" afterDir="false" />
+    <list default="true" id="26a38edf-41c9-44eb-a54d-766ff0246617" name="Changes" comment="feat : Add connet Api&#10;&lt;body&gt;&#10;api 연결하고 html 상에서 확인할 수 있게끔 수정&#10;&lt;footer&gt; #2">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bus_info/service.py" beforeDir="false" afterPath="$PROJECT_DIR$/bus_info/service.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bus_info/vo.py" beforeDir="false" afterPath="$PROJECT_DIR$/bus_info/vo.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/member/dao.py" beforeDir="false" afterPath="$PROJECT_DIR$/member/dao.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/member/service.py" beforeDir="false" afterPath="$PROJECT_DIR$/member/service.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/member/vo.py" beforeDir="false" afterPath="$PROJECT_DIR$/member/vo.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/routes/bus_route.py" beforeDir="false" afterPath="$PROJECT_DIR$/routes/bus_route.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/bus/busList.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/bus/busList.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/bus/stationList.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/bus/stationList.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/index.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -56,6 +46,7 @@
   "keyToString": {
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "WebServerToolWindowFactoryState": "false",
     "last_opened_file_path": "D:/GitHub/NBus",
     "node.js.detected.package.eslint": "true",
@@ -147,14 +138,38 @@
       <workItem from="1663563921144" duration="4801000" />
       <workItem from="1663635010652" duration="10836000" />
       <workItem from="1663652090179" duration="24022000" />
-      <workItem from="1663777425023" duration="56000" />
+      <workItem from="1663777425023" duration="1235000" />
     </task>
+    <task id="LOCAL-00001" summary="feat : Add connet Api&#10;&lt;body&gt;&#10;api 연결하고 html 상에서 확인할 수 있게끔 수정&#10;&lt;footer&gt; #2">
+      <created>1663777767510</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1663777767510</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
   </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="feat : Add connet Api&#10;&lt;body&gt;&#10;api 연결하고 html 상에서 확인할 수 있게끔 수정&#10;&lt;footer&gt; #2" />
+    <option name="LAST_COMMIT_MESSAGE" value="feat : Add connet Api&#10;&lt;body&gt;&#10;api 연결하고 html 상에서 확인할 수 있게끔 수정&#10;&lt;footer&gt; #2" />
+  </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
+    <SUITE FILE_PATH="coverage/NBus$Flask__app_py_.coverage" NAME="Flask (app.py) Coverage Results" MODIFIED="1663777499110" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="" />
     <SUITE FILE_PATH="coverage/res_lowbus$test.coverage" NAME="test Coverage Results" MODIFIED="1663735332007" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/bus_info" />
     <SUITE FILE_PATH="coverage/res_lowbus$res_lowbus.coverage" NAME="res_lowbus Coverage Results" MODIFIED="1660918281549" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="" />
     <SUITE FILE_PATH="coverage/res_lowbus$Flask__app_py_.coverage" NAME="Flask (app.py) Coverage Results" MODIFIED="1663746670320" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="" />
