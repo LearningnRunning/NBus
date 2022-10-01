@@ -21,6 +21,9 @@
 
 
 ------ [추후 업데이트 예정] --------
+## 공공데이터 API 연결 구조
+<img src="https://velog.velcdn.com/images/sungrok7/post/51291667-abbf-4c3c-aaa2-6cf939060d8f/image.png"/></a>
+
 ## Flow chart / ERD
 
 
