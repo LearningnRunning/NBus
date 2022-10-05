@@ -3,20 +3,60 @@
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
+{#        <script>#}
+{#        function del(reservenum){#}
+{#            var flag = confirm("정말로 취소하시겠습니까?");#}
+{#            if(flag){#}
+{#                location.href="/resereve/reserveinfo?reservenum="+todayres[i][0]#}
+{#            }else{#}
+{#                alert('초기화면으로 돌아갑니다.')#}
+{#            };#}
+{#        }#}
+{#    </script>#}
 </head>
 <body>
 <h3>내 예약 정보 보기</h3>
+<h4>오늘의 예약 정보</h4>
 <form action="/reserve/reserveinfo" method="post">
-    reservenum: <input type="text" name="id" value="{{m.reservenum}}" readonly><br/>
-    id: <input type="text" name="id" value="{{m.id}}" readonly><br/>
-    arrmsg: <input type="text" name="id" value="{{m.arrmsg}}" readonly><br/>
-    rtNm: <input type="text" name="id" value="{{m.rtNm}}" readonly><br/>
-    plainNo: <input type="text" name="id" value="{{m.plainNo}}" readonly><br/>
-    stNm: <input type="text" name="id" value="{{m.stNm}}" readonly><br/>
-    stNmD: <input type="text" name="id" value="{{m.stNmD}}" readonly><br/>
-    reserve: <input type="text" name="id" value="{{m.reserve}}" readonly><br/>
-    etc: <input type="text" name="id" value="{{m.etc}}" readonly><br/>
-    <input type="submit" value="회원 정보 수정">
+<table border="1">
+    <tr>
+        <th>예약번호</th><th>예약시간</th><th>도착예정시간</th><th>노선명</th><th>차량번호</th>
+        <th>승차정류소</th><th>하차정류소</th><th>예약확인</th><th>비고</th>
+    </tr>
+        {% for i in range(todayres|length) %}
+        <tr>
+            <td><input type="checkbox" name="resNum" value="{{todayres[i][0]}}">{{todayres[i][0]}}</td><td>{{todayres[i][1]}}</td><td>{{todayres[i][3]}}</td><td>{{todayres[i][4]}}</td><td>{{todayres[i][5]}}</td>
+            <td>{{todayres[i][6]}}</td><td>{{todayres[i][7]}}</td><td>{{todayres[i][8]}}</td><td>{{todayres[i][9]}}</td>
+{#          <td><input type="submit" value="예약취소" onclick="del('{{todayres[i][0]}}')"></td>#}
+        </tr>
+    {% endfor %}
+            <td><input type="submit" value="예약취소"></td>
+{#    <tr>#}
+{#        <td>{{m.reservenum}}</td><td>{{m.resdate}}</td><td>{{m.arrmsg}}</td><td>{{m.rtNm}}</td><td>{{m.plainNo}}</td>#}
+{#        <td>{{m.stNm}}</td><td>{{m.stNmD}}</td><td>{{m.reserve}}</td><td>{{m.etc}}</td>#}
+{#        <td><input type="submit" value="예약취소"></td>#}
+{#    </tr>#}
+</table>
 </form>
+
+<h4>지난 예약 정보</h4>
+<table border="1">
+    <tr>
+        <th>예약번호</th><th>예약시간</th><th>노선명</th><th>차량번호</th>
+        <th>승차정류소</th><th>하차정류소</th><th>예약확인</th><th>비고</th>
+    </tr>
+{#    {% for i in res %}#}
+{#        <tr>#}
+{#            <td>{{i.reservenum}}</td><td>{{i.resdate}}</td><td>{{i.rtNm}}</td><td>{{i.plainNo}}</td>#}
+{#            <td>{{i.stNm}}</td><td>{{i.stNmD}}</td><td>{{i.reserve}}</td><td>{{i.etc}}</td>#}
+{#        </tr>#}
+{#    {% endfor %}#}
+    {% for i in range(res|length) %}
+        <tr>
+            <td>{{res[i][0]}}</td><td>{{res[i][1]}}</td><td>{{res[i][4]}}</td><td>{{res[i][5]}}</td>
+            <td>{{res[i][6]}}</td><td>{{res[i][7]}}</td><td>{{res[i][8]}}</td><td>{{res[i][9]}}</td>
+        </tr>
+    {% endfor %}
+</table>
 </body>
 </html>
