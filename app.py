@@ -1,7 +1,23 @@
 from flask import Flask, render_template,request
+
+from bus_info.service import Service
 from routes.bus_route import bp as bus_bp
 from routes.mem_route import bp as mem_bp
 from routes.res_route import bp as res_bp
+import requests, json
+
+def current_location():
+    here_req = requests.get("http://www.geoplugin.net/json.gp")
+
+    if (here_req.status_code != 200):
+        print("현재좌표를 불러올 수 없음")
+    else:
+        location = json.loads(here_req.text)
+        crd = {"lat": str(location["geoplugin_latitude"]), "lng": str(location["geoplugin_longitude"])}
+
+    return crd
+
+service = Service()
 
 app = Flask(__name__)
 
@@ -24,7 +40,11 @@ def root():
     로그아웃 처리
     session.pop('flag')
     session.pop('loginid')'''
-    return render_template('index.html')
+    tmX = 126.8973568
+    tmY = 37.51936
+    radius = 300
+    res = service.getStationByPos(tmX, tmY, radius)
+    return render_template('index.html', res=res, flag=True)
 
 if __name__ == '__main__':
-    app.run(debug = True) #
+    app.run(debug=True) #

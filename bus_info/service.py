@@ -1,7 +1,7 @@
 import requests
 from bs4 import BeautifulSoup
 
-from bus_info.vo import Bus1, Bus2
+from bus_info.vo import Bus1, Bus2, station1
 
 
 class Service:
@@ -73,7 +73,7 @@ class Service:
             station = station.find('station').text
 
             if stId == station:
-                res.extend([station, busRouteId, seq])
+                res.extend([station, busRouteId, seq]) # getArrInfoByRoute에 들어갈 파람 stId,busRouteId, seq
 
         return res
 
@@ -122,4 +122,34 @@ class Service:
             res.append(Bus2(stNm=stNm,rtNm=rtNm, firstTm=firstTm,lastTm=lastTm, term=term,
                  vehId1=vehId1, plainNo1=plainNo1,busType1=busType1, arrmsg1=arrmsg1, reride_Num1=reride_Num1, isLast1=isLast1,
                  vehId2=vehId2, plainNo2=plainNo2, busType2=busType2, arrmsg2=arrmsg2, reride_Num2=reride_Num2, isLast2=isLast2))
+        return res
+
+
+    def getStationByPos(self, tmX,tmY,radius): # tmX 127 머시기로 시작함 # tmY 37 뭐시기로 시작함
+        # &tmX=126.8973568&tmY=37.51936&radius=100
+        url = 'http://ws.bus.go.kr/api/rest/stationinfo/getStationByPos?'
+        url += 'serviceKey=' + self.key
+        url += '&tmX=' + str(tmX) + '&tmY=' + str(tmY) # 좌표
+        url += '&radius=' + str(radius) # 반경
+        print(url)
+        html = requests.get(url).text # url로 요청을 보내고 받은 응답 페이지 텍스트를 html에 저장
+        root = BeautifulSoup(html, 'lxml-xml') # 파서 객체 생성
+        headerCd = root.find('headerCd').text
+        if headerCd != '0':
+            msg = root.find('headerMsg').text
+            print(msg)
+            return
+
+        routeList = root.find_all('itemList') #태그 이름이 'StationList'인 모든 태그 요소를 리스트에 담아서 반환
+        res = []
+        for route in routeList:
+            arsId = route.find('arsId').text
+            gpsX = route.find('gpsX').text
+            gpsY = route.find('gpsY').text
+            dist = route.find('dist').text
+            stationNm = route.find('stationNm').text
+            stationId = route.find('stationId').text
+
+            res.append(station1(arsId=arsId, gpsX=gpsX, gpsY=gpsY, stationNm=stationNm,stationId=stationId, dist=dist))
+
         return res

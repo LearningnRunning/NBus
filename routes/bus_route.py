@@ -8,13 +8,13 @@ service = Service()
 bp = Blueprint('bus', __name__, url_prefix='/bus')
 
 @bp.route('/businfo', methods=['POST'])
-def businfo():
+def busInfo():
     strSrch = request.form['strSrch']
     res = service.getStationByName(strSrch)
     return render_template('bus/busList.html', res=res, flag=True)
 
 @bp.route('/stationinfo/<string:id>', methods=['GET'])
-def stationinfo(id):
+def stationInfo(id):
     arsId = id.split('@')[0]
     stId = id.split('@')[1]
     tmp_res = service.getRouteByStation(arsId)
@@ -24,4 +24,14 @@ def stationinfo(id):
         res.extend(service.getArrInfoByRoute(tmp_lst3[0], tmp_lst3[1], tmp_lst3[2]))
     return render_template('bus/stationList.html', res=res)
 
+
+@bp.route('/', methods=['GET'])
+def stationPosInfo():
+    tmX = 126.8973568
+    tmY = 37.51936
+    radius = 500
+    print(radius)
+    res = service.getStationByPos(tmX,tmY,radius)
+    print(res)
+    return render_template('index.html', res=res, flag=True)
 

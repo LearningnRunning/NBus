@@ -13,6 +13,6 @@ class Reserve:
 
 
     def __str__(self): #toString()
-        return 'reservenum :'+self.reservenum + '/ '+ 'id :'+self.id+' / '+'arrmsg : '+self.arrmsg+' / '+ 'rtNm :' +self.rtNm+ ' / '\
+        return 'reservenum :'+ self.reservenum + '/ '+ 'id :'+self.id+' / '+'arrmsg : '+self.arrmsg+' / '+ 'rtNm :' +self.rtNm+ ' / '\
                +'plainNo :' +self.plainNo+ ' / '+ 'stNm :' +self.stNm+ ' / ' + 'stNmD :' +self.stNmD+ ' / '\
                +'reserve :' +self.reserve+ ' / ' +'etc :' +self.etc

@@ -15,8 +15,8 @@
 {% for s in res %}
   <tr>
       <td>{{s.stNm}}</td><td>{{s.rtNm}}</td><td>{{s.firstTm}}</td><td>{{s.lastTm}}</td><td>{{s.term}}</td>
-      <td>{{s.plainNo1}}</td><td>{{s.busType1}}</td><td>{{s.arrmsg1}}</td><td>{{s.reride_Num1}}</td><td>{{s.isLast1}}</td>
-      <td>{{s.plainNo2}}</td><td>{{s.busType2}}</td><td>{{s.arrmsg2}}</td><td>{{s.reride_Num2}}</td><td>{{s.isLast2}}</td>
+      <td>{{s.plainNo1}}</td><td>{{s.busType1}}</td><td><a href="/bus/stationinfo/{{s.busRouteId}}">{{s.arrmsg1}}</a></td><td>{{s.reride_Num1}}</td><td>{{s.isLast1}}</td>
+      <td>{{s.plainNo2}}</td><td>{{s.busType2}}</td><td><a href="/bus/stationinfo/{{s.busRouteId}}">{{s.arrmsg2}}</a></td><td>{{s.reride_Num2}}</td><td>{{s.isLast2}}</td>
   </tr>
 {% endfor %}
 </table>
