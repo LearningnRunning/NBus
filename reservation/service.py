@@ -1,7 +1,8 @@
-from reserve.vo import Reserve
-from reserve.dao import ReserveDao
+from reservation.vo import Reserve
+from reservation.dao import ReserveDao
 
-class ResService:
+
+class ReService:
     def __init__(self):
         self.dao = ReserveDao()
 
@@ -10,7 +11,7 @@ class ResService:
         self.dao.insert(r)
 
     def getById(self, id:str)->Reserve: #타입 힌트
-        return self.dao.select(id)
+        return self.dao.selectById(id)
 
     # 삭제
     def delReserve(self, id:str):

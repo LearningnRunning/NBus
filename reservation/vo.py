@@ -4,7 +4,7 @@ class Reserve:
         self.reservenum = reservenum
         self.id = id
         self.arrmsg = arrmsg  # 도착예정시간
-        self.rtNm = rtNm  # 도착예정시간
+        self.rtNm = rtNm  # 노선 번호
         self.plainNo = plainNo # 차량 번호
         self.stNm = stNm # 승차 정류소명
         self.stNmD = stNmD # 하차정류소명
@@ -13,6 +13,6 @@ class Reserve:
 
 
     def __str__(self): #toString()
-        return 'reservenum :'+self.reservenum + '/ '+ 'id :'+self.id+' / '+'arrmsg : '+self.arrmsg+' / '+ 'rtNm :' +self.rtNm+ ' / '\
-               +'plainNo :' +self.plainNo+ ' / '+ 'stNm :' +self.stNm+ ' / ' + 'stNmD :' +self.stNmD+ ' / '\
+        return 'reservenum :'+self.reservenum+' / '+'id :'+self.id+' / '+'arrmsg : '+self.arrmsg+' / '+ ' rtNm :' +self.rtNm+ ' / '\
+               +' plainNo :' +self.plainNo+ ' / '+ 'stNm :' +self.stNm+ ' / ' + 'stNmD :' +self.stNmD+ ' / '\
                +'reserve :' +self.reserve+ ' / ' +'etc :' +self.etc

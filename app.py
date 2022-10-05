@@ -1,11 +1,13 @@
-from flask import Flask, render_template,request
+from flask import Flask, render_template, request
 from routes.bus_route import bp as bus_bp
 from routes.mem_route import bp as mem_bp
-from routes.res_route import bp as res_bp
+from routes.reserve_route import bp as res_bp
+from routes.main import bp as main
+from bus_info.service import Service
 
 app = Flask(__name__)
 
-app.secret_key = 'ram'
+app.secret_key = 'zero'
 
 # url이 등록된 bluePrint 객체 등록
 # 블루 프린트에 등록한 url을 flask객체가 인식
@@ -14,6 +16,7 @@ app.secret_key = 'ram'
 app.register_blueprint(bus_bp)
 app.register_blueprint(mem_bp)
 app.register_blueprint(res_bp)
+app.register_blueprint(main)
 
 @app.route('/')
 def root():
@@ -21,10 +24,11 @@ def root():
     로그인 처리
     session['flag'] = True
     session['loginid'] = id
+
     로그아웃 처리
     session.pop('flag')
     session.pop('loginid')'''
     return render_template('index.html')
 
 if __name__ == '__main__':
-    app.run(debug = True) #
+    app.run(port=5001) #

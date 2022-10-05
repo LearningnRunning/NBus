@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<h3>정거장 정보</h3>
+<table border="1">
+  <tr>
+      <th>순번</th>
+      <th>정거장명</th>
+      <th>방향</th>
+      <th>x좌표</th>
+      <th>y좌표</th>
+  </tr>
+{% for s in res %}
+  <tr>
+      <td>{{s.seq}}</td>
+      <td><a href="/bus/buslistByStation/{{s.arsId}}">{{s.stationNm}}</a></td>
+      <td>{{s.direction}}</td>
+      <td>{{s.gpsX}}</td>
+      <td>{{s.gpsY}}</td>
+  </tr>
+{% endfor %}
+</table>
+</body>
+</html>

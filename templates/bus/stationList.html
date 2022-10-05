@@ -8,15 +8,28 @@
 <h3>정거장 정보</h3>
 <span>정거장명</span>
 <table border="1">
-  <tr><th>정거장명</th><th>노선명</th><th>첫차시간</th><th>막차시간</th><th>배차간격</th>
-      <th>차량번호</th><th>타입</th><th>도착예정시간</th><th>혼잡도</th><th>막차여부</th>
-      <th>차량번호</th><th>타입</th><th>도착예정시간</th><th>혼잡도</th><th>막차여부</th>
+  <tr>
+    <th>정거장명</th><th>노선명</th><th>첫차시간</th><th>막차시간</th><th>배차간격</th>
+    <th>차량번호</th><th>타입</th><th>도착예정시간</th><th>혼잡도</th><th>막차여부</th>
+    <th>차량번호</th><th>타입</th><th>도착예정시간</th><th>혼잡도</th><th>막차여부</th>
   </tr>
 {% for s in res %}
   <tr>
-      <td>{{s.stNm}}</td><td>{{s.rtNm}}</td><td>{{s.firstTm}}</td><td>{{s.lastTm}}</td><td>{{s.term}}</td>
-      <td>{{s.plainNo1}}</td><td>{{s.busType1}}</td><td>{{s.arrmsg1}}</td><td>{{s.reride_Num1}}</td><td>{{s.isLast1}}</td>
-      <td>{{s.plainNo2}}</td><td>{{s.busType2}}</td><td>{{s.arrmsg2}}</td><td>{{s.reride_Num2}}</td><td>{{s.isLast2}}</td>
+      <td>{{s.stNm}}</td>
+      <td>{{s.rtNm}}</td>
+      <td>{{s.firstTm}}</td>
+      <td>{{s.lastTm}}</td>
+      <td>{{s.term}}</td>
+      <td><a href = "/bus/arrstationinfo/{{s.busRouteId}}">{{s.plainNo1}}</a></td>
+      <td>{{s.busType1}}</td>
+      <td>{{s.arrmsg1}}</td>
+      <td>{{s.reride_Num1}}</td>
+      <td>{{s.isLast1}}</td>
+      <td><a href = "/bus/arrstationinfo/{{s.busRouteId}}">{{s.plainNo2}}</a></td>
+      <td>{{s.busType2}}</td>
+      <td>{{s.arrmsg2}}</td>
+      <td>{{s.reride_Num2}}</td>
+      <td>{{s.isLast2}}</td>
   </tr>
 {% endfor %}
 </table>

@@ -7,7 +7,7 @@ class MemberDao:
         self.conn = None
 
     def connect(self):
-        self.conn = pymysql.connect(host='localhost', user='root', password='1234', db='nbus', charset='utf8')
+        self.conn = pymysql.connect(host='localhost', user='root', password='12345678', db='Nbus', charset='utf8')
 
     def disconn(self):
         self.conn.close()

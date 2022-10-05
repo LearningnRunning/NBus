@@ -10,11 +10,13 @@ class Bus1:
 
         return s
 
+
 class Bus2:
-    def __init__(self,  stNm=None,rtNm=None, firstTm=None,lastTm=None, term=None,
+    def __init__(self,  busRouteId=None, stNm=None,rtNm=None, firstTm=None,lastTm=None, term=None,
                  vehId1=None,plainNo1=None, busType1=None, arrmsg1=None, reride_Num1=None, isLast1=None,
                  vehId2=None,plainNo2=None, busType2=None, arrmsg2=None, reride_Num2=None, isLast2=None):
 
+        self.busRouteId = busRouteId
 
         self.stNm = stNm # 정류소명
         self.rtNm = rtNm  # 노선명
@@ -40,6 +42,7 @@ class Bus2:
 
     def __str__(self):
         s = ''
+        s += '노선 고유번호' + self.busRouteId + '\n'
         s += '정류소명' + self.stNm + '\n'
         s += '노선명' + self.rtNm + '\n'
         s += '첫차시간: ' + self.firstTm + '\n'
@@ -59,4 +62,25 @@ class Bus2:
         s += '두번째 도착예정 버스의 도착정보메시지: ' + self.arrmsg2 + '\n'
         s += '두번째 도착예정 버스의 버스내부 제공용 현재 재차 인원: ' + self.reride_Num2 + '\n'
         s += '두번째 도착예정버스의 막차여부: ' + self.isLast2 + '\n'
+        return s
+
+class Bus3:
+    def __init__(self,  busRouteId=None, seq=None, stationNm=None, direction=None, gpsX=None, gpsY=None):
+
+        self.busRouteId = busRouteId # 버스 고유번호
+        self.seq = seq # 순번
+        self.stationNm = stationNm # 정류소명
+        self.direction = direction # 진행방향
+        self.gpsX = gpsX # x좌표
+        self.gpsY = gpsY # y좌표
+
+    def __str__(self):
+        s = ''
+        s += '버스 고유번호' + self.busRouteId + '\n'
+        s += '순번: ' + self.seq + '\n'
+        s += '정류소명: ' + self.stationNm + '\n'
+        s += '진행방향: ' + self.direction + '\n'
+        s += 'x좌표: ' + self.gpsX + '\n'
+        s += 'y좌표: ' + self.gpsY + '\n'
+
         return s
