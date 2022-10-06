@@ -17,6 +17,7 @@ class Reserve:
 
 
     def __str__(self): #toString()
+
         return 'reservenum :'+self.reservenum+ '/ '+ 'resdate :'+self.resdate+ '/ '+'id :'+self.id+' / '\
                +'arrmsg : '+self.arrmsg+' / '+ 'rtNm :' +self.rtNm+ ' / '\
                +'plainNo :' +self.plainNo+ ' / '+ 'stNm :' +self.stNm+ ' / ' + 'stNmD :' +self.stNmD+ ' / '\
