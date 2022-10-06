@@ -1,5 +1,6 @@
 import requests
 from bs4 import BeautifulSoup
+import json
 
 from bus_info.vo import Bus1, Bus2, station1
 
@@ -131,7 +132,7 @@ class Service:
         url += 'serviceKey=' + self.key
         url += '&tmX=' + str(tmX) + '&tmY=' + str(tmY) # 좌표
         url += '&radius=' + str(radius) # 반경
-        print(url)
+
         html = requests.get(url).text # url로 요청을 보내고 받은 응답 페이지 텍스트를 html에 저장
         root = BeautifulSoup(html, 'lxml-xml') # 파서 객체 생성
         headerCd = root.find('headerCd').text
@@ -150,6 +151,14 @@ class Service:
             stationNm = route.find('stationNm').text
             stationId = route.find('stationId').text
 
-            res.append(station1(arsId=arsId, gpsX=gpsX, gpsY=gpsY, stationNm=stationNm,stationId=stationId, dist=dist))
+            res.append(
+                {
+                    'arsId':arsId+ '@' + stationId,
+                    'gpsX':gpsX,
+                    'gpsY':gpsY,
+                    'stationNm':stationNm,
+                    'dist':dist
+                }
+            )
 
         return res

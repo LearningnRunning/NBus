@@ -25,13 +25,4 @@ def stationInfo(id):
     return render_template('bus/stationList.html', res=res)
 
 
-@bp.route('/', methods=['GET'])
-def stationPosInfo():
-    tmX = 126.8973568
-    tmY = 37.51936
-    radius = 500
-    print(radius)
-    res = service.getStationByPos(tmX,tmY,radius)
-    print(res)
-    return render_template('index.html', res=res, flag=True)
 

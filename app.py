@@ -42,9 +42,10 @@ def root():
     session.pop('loginid')'''
     tmX = 126.8973568
     tmY = 37.51936
-    radius = 300
+    radius = 500
     res = service.getStationByPos(tmX, tmY, radius)
-    return render_template('index.html', res=res, flag=True)
+    return render_template('index.html', res=res, flag=True, data=json.dumps(res, ensure_ascii=False))
+
 
 if __name__ == '__main__':
     app.run(debug=True) #

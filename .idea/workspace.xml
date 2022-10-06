@@ -5,17 +5,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="c383426c-2d51-49c7-bc86-190921a295b3" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/Nbus.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/Nbus.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/NBus" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/app.py" beforeDir="false" afterPath="$PROJECT_DIR$/app.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/bus_info/service.py" beforeDir="false" afterPath="$PROJECT_DIR$/bus_info/service.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bus_info/vo.py" beforeDir="false" afterPath="$PROJECT_DIR$/bus_info/vo.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/reserve/dao.py" beforeDir="false" afterPath="$PROJECT_DIR$/reserve/dao.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/reserve/vo.py" beforeDir="false" afterPath="$PROJECT_DIR$/reserve/vo.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/routes/bus_route.py" beforeDir="false" afterPath="$PROJECT_DIR$/routes/bus_route.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/bus/stationList.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/bus/stationList.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/index.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -51,11 +44,15 @@
   <component name="HighlightingSettingsPerFile">
     <setting file="file://$PROJECT_DIR$/app.py" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/bus_info/service.py" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/bus_info/vo.py" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/member/dao.py" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/member/service.py" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/reserve/vo.py" root0="SKIP_INSPECTION" />
     <setting file="file://$PROJECT_DIR$/routes/bus_route.py" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/static/css/index.css" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/static/javascript/index.js" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/templates/bus/busList.html" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/templates/bus/stationList.html" root0="FORCE_HIGHLIGHTING" root1="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/templates/index.html" root0="FORCE_HIGHLIGHTING" />
   </component>
   <component name="MarkdownSettingsMigration">
@@ -188,6 +185,9 @@
       <workItem from="1664779257170" duration="1495000" />
       <workItem from="1664843454228" duration="10953000" />
       <workItem from="1664863308072" duration="9215000" />
+      <workItem from="1664941513486" duration="10055000" />
+      <workItem from="1664972601618" duration="1014000" />
+      <workItem from="1665014570235" duration="276000" />
     </task>
     <servers />
   </component>
@@ -205,22 +205,13 @@
       </map>
     </option>
   </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/app.py</url>
-          <line>49</line>
-          <option name="timeStamp" value="1" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
-  </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/NBus$app.coverage" NAME="app Coverage Results" MODIFIED="1664539717074" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
-    <SUITE FILE_PATH="coverage/NBus$Flask__app_py_.coverage" NAME="Flask (app.py) Coverage Results" MODIFIED="1664929215855" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/NBus$Flask__app_py_.coverage" NAME="Flask (app.py) Coverage Results" MODIFIED="1664972637088" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/NBus$Nbus.coverage" NAME="Nbus Coverage Results" MODIFIED="1664539609765" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/Nbus$Flask__app_py_.coverage" NAME="Flask (app.py) Coverage Results" MODIFIED="1664158801535" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/Nbus$Nbus.coverage" NAME="Nbus Coverage Results" MODIFIED="1661499753137" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="" />
+    <SUITE FILE_PATH="coverage/res_lowbus$res_lowbus.coverage" NAME="res_lowbus Coverage Results" MODIFIED="1660918281549" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="" />
+    <SUITE FILE_PATH="coverage/res_lowbus$Flask__app_py_.coverage" NAME="Flask (app.py) Coverage Results" MODIFIED="1661502491054" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="" />
   </component>
 </project>
