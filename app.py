@@ -41,8 +41,8 @@ def root():
     로그아웃 처리
     session.pop('flag')
     session.pop('loginid')'''
-    tmX = 126.8973568
-    tmY = 37.51936
+    tmX = 126.91256616800607
+    tmY = 37.48182249774759
     radius = 500
     res = service.getStationByPos(tmX, tmY, radius)
     return render_template('index.html', res=res, flag=True, data=json.dumps(res, ensure_ascii=False))
