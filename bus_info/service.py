@@ -1,8 +1,7 @@
 import requests
 from bs4 import BeautifulSoup
-import json
 
-from bus_info.vo import Bus1, Bus2, station1
+from bus_info.vo import Bus1, Bus2, Bus3
 
 
 class Service:
@@ -74,12 +73,12 @@ class Service:
             station = station.find('station').text
 
             if stId == station:
-                res.extend([station, busRouteId, seq]) # getArrInfoByRoute에 들어갈 파람 stId,busRouteId, seq
+                res.extend([station, busRouteId, seq])
 
         return res
 
     #seq=None, name=None, direction=None, x=None, y=None
-    def getArrInfoByRoute(self, stId,busRouteId, seq):
+    def getArrInfoByRoute(self, stId, busRouteId, seq):
         url = 'http://ws.bus.go.kr/api/rest/arrive/getArrInfoByRoute?'
         url += 'ServiceKey=' + self.key
         url += '&stId=' + stId
@@ -94,11 +93,14 @@ class Service:
             print(msg)
             return
 
+
         stationList = root.find_all('itemList')  # 태그 이름이 'itemList'인 모든 태그 요소를 리스트에 담아서 반환
         res = []
         rerideNumDic = {'0': '정보없음','3':'여유', '4':'보통', '5':'혼잡'}
         busTypeDic = {'0': '일반', '1': '저상'}
         for station in stationList:
+            busRouteId = busRouteId
+
             stNm = station.find('stNm').text
             rtNm = station.find('rtNm').text
             firstTm = station.find('firstTm').text
@@ -120,45 +122,43 @@ class Service:
             arrmsg2 = station.find('arrmsg2').text
             reride_Num2 = rerideNumDic[station.find('reride_Num1').text]
             isLast2 = station.find('isLast2').text
-            res.append(Bus2(stNm=stNm,rtNm=rtNm, firstTm=firstTm,lastTm=lastTm, term=term,
+
+            # 첫번째 차량과 두번째 차량을 구분하기 위함
+            paramId1 = stId + '@' + busRouteId + '@' + seq + '@' + plainNo1 + '@' + reride_Num1 + '@' + busType1
+            paramId2 = stId + '@' + busRouteId + '@' + seq + '@' + plainNo2 + '@' + reride_Num2 + '@' + busType2
+
+            res.append(Bus2(paramId1=paramId1, paramId2=paramId2, busRouteId=busRouteId, stNm=stNm,rtNm=rtNm, firstTm=firstTm,lastTm=lastTm, term=term,
                  vehId1=vehId1, plainNo1=plainNo1,busType1=busType1, arrmsg1=arrmsg1, reride_Num1=reride_Num1, isLast1=isLast1,
                  vehId2=vehId2, plainNo2=plainNo2, busType2=busType2, arrmsg2=arrmsg2, reride_Num2=reride_Num2, isLast2=isLast2))
         return res
 
 
-    def getStationByPos(self, tmX,tmY,radius): # tmX 127 머시기로 시작함 # tmY 37 뭐시기로 시작함
-        # &tmX=126.8973568&tmY=37.51936&radius=100
-        url = 'http://ws.bus.go.kr/api/rest/stationinfo/getStationByPos?'
-        url += 'serviceKey=' + self.key
-        url += '&tmX=' + str(tmX) + '&tmY=' + str(tmY) # 좌표
-        url += '&radius=' + str(radius) # 반경
+    def getAllStaionByRoute(self, busRouteId) :  # 버스 노선ID 넣으면 노선 가는 모든 정류장의 순번, 정류장ID
+        url = 'http://ws.bus.go.kr/api/rest/busRouteInfo/getStaionByRoute?'
+        url += 'ServiceKey=' + self.key
+        url += '&busRouteId=' + busRouteId
 
-        html = requests.get(url).text # url로 요청을 보내고 받은 응답 페이지 텍스트를 html에 저장
-        root = BeautifulSoup(html, 'lxml-xml') # 파서 객체 생성
+        html = requests.get(url).text  # url로 요청을 보내고 받은 응답 페이지 텍스트를 html에 저장
+        root = BeautifulSoup(html, 'lxml-xml')  # 파서 객체 생성
         headerCd = root.find('headerCd').text
         if headerCd != '0':
             msg = root.find('headerMsg').text
             print(msg)
             return
 
-        routeList = root.find_all('itemList') #태그 이름이 'StationList'인 모든 태그 요소를 리스트에 담아서 반환
+        stationList = root.find_all('itemList')  # 태그 이름이 'itemList'인 모든 태그 요소를 리스트에 담아서 반환
         res = []
-        for route in routeList:
-            arsId = route.find('arsId').text
-            gpsX = route.find('gpsX').text
-            gpsY = route.find('gpsY').text
-            dist = route.find('dist').text
-            stationNm = route.find('stationNm').text
-            stationId = route.find('stationId').text
+        for station in stationList:
+            busRouteId = busRouteId
 
-            res.append(
-                {
-                    'arsId':arsId+ '@' + stationId,
-                    'gpsX':gpsX,
-                    'gpsY':gpsY,
-                    'stationNm':stationNm,
-                    'dist':dist
-                }
-            )
+            seq = station.find('seq').text
+            stationNm = station.find('stationNm').text
+            direction = station.find('direction').text
+            gpsX = station.find('gpsX').text
+            gpsY = station.find('gpsY').text
+            busRouteNm = station.find('busRouteNm').text
 
+
+            res.append(Bus3(busRouteId=busRouteId, seq=seq, direction=direction,
+                            stationNm=stationNm, gpsX=gpsX, gpsY=gpsY, busRouteNm=busRouteNm))
         return res

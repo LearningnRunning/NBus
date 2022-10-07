@@ -7,7 +7,7 @@ class MemberDao:
         self.conn = None
 
     def connect(self):
-        self.conn = pymysql.connect(host='localhost', user='root', password='1234', db='nbus', charset='utf8')
+        self.conn = pymysql.connect(host='localhost', user='root', password='12345678', db='Nbus', charset='utf8')
 
     def disconn(self):
         self.conn.close()
@@ -74,13 +74,14 @@ class MemberDao:
     def delete(self, id:str):
         try:
             self.connect()  # db연결
+            print(id)
             cursor = self.conn.cursor()  # 사용할 커서 객체 생성
             sql = 'delete from member where id = %s'
             d = (id,)
             cursor.execute(sql, d)  # sql 실행
-            print(cursor)
             self.conn.commit()
-            return print('회원 탈퇴가 완료되었습니다.')
+
+            return print('삭제가 완료되었습니다.')
 
         except Exception as e:
             print(e)
