@@ -44,7 +44,7 @@ deactivate () {
 # unset irrelevant variables
 deactivate nondestructive
 
-VIRTUAL_ENV='/Users/j/Desktop/projects/Shall_we_go/NBus/venv'
+VIRTUAL_ENV='/Users/j/git/NBus/venv'
 if ([ "$OSTYPE" = "cygwin" ] || [ "$OSTYPE" = "msys" ]) && $(command -v cygpath &> /dev/null) ; then
     VIRTUAL_ENV=$(cygpath -u "$VIRTUAL_ENV")
 fi

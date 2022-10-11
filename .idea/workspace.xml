@@ -41,13 +41,17 @@
     <setting file="file://$PROJECT_DIR$/bus_info/vo.py" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/member/dao.py" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/member/service.py" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/reserve/dao.py" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/reserve/vo.py" root0="SKIP_INSPECTION" />
     <setting file="file://$PROJECT_DIR$/routes/bus_route.py" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/static/css/index.css" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/static/javascript/index.js" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/routes/mem_route.py" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/templates/bus/busList.html" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/templates/bus/stationList.html" root0="FORCE_HIGHLIGHTING" root1="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/templates/index.html" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/templates/member/edit.html" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/templates/member/join.html" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/templates/member/login.html" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/templates/member/logout.html" root0="FORCE_HIGHLIGHTING" />
   </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
@@ -58,33 +62,33 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "DefaultHtmlFileTemplate": "HTML File",
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "WebServerToolWindowFactoryState": "false",
-    "last_opened_file_path": "C:/Users/user/PycharmProjects/Nbus/static/img",
-    "list.type.of.created.stylesheet": "CSS",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "settings.editor.selected.configurable": "com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;DefaultHtmlFileTemplate&quot;: &quot;HTML File&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;last_opened_file_path&quot;: &quot;/Users/j/git/NBus/templates/reserve&quot;,
+    &quot;list.type.of.created.stylesheet&quot;: &quot;CSS&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable&quot;
   },
-  "keyToStringList": {
-    "DatabaseDriversLRU": [
-      "mysql"
+  &quot;keyToStringList&quot;: {
+    &quot;DatabaseDriversLRU&quot;: [
+      &quot;mysql&quot;
     ]
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/templates/reserve" />
       <recent name="C:\Users\user\PycharmProjects\Nbus\static\img" />
       <recent name="D:\GitHub\NBus\templates" />
       <recent name="D:\GitHub\NBus" />
       <recent name="C:\Users\user\PycharmProjects\Nbus\templates" />
-      <recent name="C:\Users\user\PycharmProjects\Nbus" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="D:\GitHub\NBus" />
@@ -93,7 +97,7 @@
       <recent name="C:\Users\user\PycharmProjects\Nbus\templates\reserve" />
     </key>
   </component>
-  <component name="RunManager" selected="Flask server.Flask (app.py)">
+  <component name="RunManager" selected="Python.app">
     <configuration name="app" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="Nbus" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -122,9 +126,9 @@
       <option name="targetType" value="PATH" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
-      <option name="SDK_HOME" value="" />
+      <option name="SDK_HOME" value="/usr/local/bin/python3.7" />
       <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
-      <option name="IS_MODULE_SDK" value="true" />
+      <option name="IS_MODULE_SDK" value="false" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
@@ -137,7 +141,7 @@
       <option name="targetType" value="PATH" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
-      <option name="SDK_HOME" value="" />
+      <option name="SDK_HOME" value="/usr/local/bin/python3.7" />
       <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
       <option name="IS_MODULE_SDK" value="false" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
@@ -188,6 +192,14 @@
       <workItem from="1665020145759" duration="468000" />
       <workItem from="1665020709124" duration="13164000" />
       <workItem from="1665043159116" duration="7313000" />
+      <workItem from="1665130495784" duration="473000" />
+      <workItem from="1665447232703" duration="5000" />
+      <workItem from="1665447245614" duration="6258000" />
+      <workItem from="1665454094408" duration="790000" />
+      <workItem from="1665455875419" duration="276000" />
+      <workItem from="1665463213101" duration="2888000" />
+      <workItem from="1665467441522" duration="3000" />
+      <workItem from="1665467450968" duration="5000" />
     </task>
     <servers />
   </component>
@@ -206,12 +218,12 @@
     </option>
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
-    <SUITE FILE_PATH="coverage/NBus$app.coverage" NAME="app Coverage Results" MODIFIED="1664539717074" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
-    <SUITE FILE_PATH="coverage/Nbus$Flask__app_py_.coverage" NAME="Flask (app.py) Coverage Results" MODIFIED="1665101013044" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
-    <SUITE FILE_PATH="coverage/Nbus$Nbus.coverage" NAME="Nbus Coverage Results" MODIFIED="1661499753137" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="" />
-    <SUITE FILE_PATH="coverage/NBus$Flask__app_py_.coverage" NAME="Flask (app.py) Coverage Results" MODIFIED="1664972637088" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/res_lowbus$res_lowbus.coverage" NAME="res_lowbus Coverage Results" MODIFIED="1660918281549" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="" />
-    <SUITE FILE_PATH="coverage/NBus$Nbus.coverage" NAME="Nbus Coverage Results" MODIFIED="1664539609765" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/NBus$app.coverage" NAME="app Coverage Results" MODIFIED="1665467071624" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/Nbus$Nbus.coverage" NAME="Nbus Coverage Results" MODIFIED="1661499753137" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="" />
+    <SUITE FILE_PATH="coverage/Nbus$Flask__app_py_.coverage" NAME="Flask (app.py) Coverage Results" MODIFIED="1665101013044" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/res_lowbus$Flask__app_py_.coverage" NAME="Flask (app.py) Coverage Results" MODIFIED="1661502491054" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="" />
+    <SUITE FILE_PATH="coverage/NBus$Nbus.coverage" NAME="Nbus Coverage Results" MODIFIED="1665130670811" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/NBus$Flask__app_py_.coverage" NAME="Flask (app.py) Coverage Results" MODIFIED="1665130766844" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
   </component>
 </project>

@@ -9,6 +9,7 @@ service = MemberService()
 bp = Blueprint('member', __name__, url_prefix='/member')
 # bp = Blueprint('이름', __name__, url_prefix='/자동으로 붙을 주소')
 
+
 @bp.route('/join', methods=['GET'])
 def joinForm():
     return render_template('member/join.html')
@@ -18,8 +19,9 @@ def join():
     id = request.form['id']
     pwd = request.form['pwd']
     name = request.form['name']
+    pnum = request.form['pnum']
     email = request.form['email']
-    service.addMember(Member(id=id,pwd=pwd,name=name,email=email))
+    service.addMember(Member(id=id,pwd=pwd,name=name,pnum=pnum,email=email))
     return render_template('index.html')
 
 # 로그인
@@ -33,18 +35,11 @@ def login():
     pwd = request.form['pwd']
     m = service.getById(id=id)
     if m != None and m.pwd == pwd:
-        session['flag']=True
-        session['loginid']=id
+        session['flag'] = True
+        session['loginid'] = id
     return render_template('index.html')
 
-#로그아웃
-@bp.route('/logout', methods=['GET'])
-def logout():
-    session.pop('flag')
-    session.pop('loginid')
-    return render_template('index.html')
-
-# 내정보수정
+# 내정보수정 (수정 필요)
 @bp.route('/myinfo', methods=['GET'])
 def editForm():
     loginid = session['loginid']
@@ -56,12 +51,24 @@ def edit():
     id = request.form['id']
     pwd = request.form['pwd']
     name = request.form['name']
+    pnum = request.form['pnum']
     email = request.form['email']
-    service.addMember(Member(id=id, pwd=pwd, name=name, email=email))
+    service.editMember(Member(id=id, pwd=pwd, name=name, pnum=pnum, email=email))
+    return render_template('index.html')
+
+#로그아웃
+@bp.route('/logout', methods=['GET'])
+def logout():
+    session.pop('flag')
+    session.pop('loginid')
     return render_template('index.html')
 
 # 탈퇴
 @bp.route('/out', methods=['GET'])
+def outForm():
+    return render_template('member/logout.html')
+
+@bp.route('/out', methods=['POST'])
 def out():
     loginid = session['loginid']
     service.delMember(id=loginid)

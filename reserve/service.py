@@ -24,8 +24,8 @@ class ResService:
 
 
     # 삭제
-    def delReserve(self, reservenum): # 예약번호로 취소
-        self.dao.delete(reservenum)
+    def delReserve(self, resNum): # 예약번호로 취소
+        self.dao.delete(resNum)
 
     def editReserve(self, r:Reserve):
         self.dao.update(r)

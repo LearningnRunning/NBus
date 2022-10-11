@@ -21,8 +21,8 @@ def reserveForm():
 
 @bp.route('/reserveinfo/', methods=['POST'])
 def out():
-    reservenum = request.form.get('resNum')
-    service.delReserve(reservenum=reservenum)
+    resNum = request.form.get('resNum')
+    service.delReserve(resNum=resNum)
     return redirect('/')
 
 

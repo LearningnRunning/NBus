@@ -67,7 +67,7 @@ class ReserveDao:
             d = (id,)
             cursor.execute(sql, d)  # sql 실행
             for row in cursor:
-                res.append(Reserve(reservenum=row[0],resdate=row[1],id=row[2],
+                res.append(Reserve(resNum=row[0],resdate=row[1],id=row[2],
                                rtNm=row[3], plainNo=row[4], stNm=row[5], stNmD=row[6],
                                reserve=row[7], etc=row[8]))
             #res =[Reserve(row[0],row[1],row[2],row[3],row[4],row[5],row[6],row[7],row[8],row[9])
@@ -117,13 +117,13 @@ class ReserveDao:
         finally:
             self.disconn()
 
-    # 삭제(reservenum으로 삭제하기)
-    def delete(self, reservenum:int):
+    # 삭제(resNum 삭제하기)
+    def delete(self, resNum:int):
         try:
             self.connect()  # db연결
             cursor = self.conn.cursor()  # 사용할 커서 객체 생성
-            sql = 'delete from reserve where reservenum = %s'
-            d = (reservenum,)
+            sql = 'delete from reserve where resNum = %s'
+            d = (resNum,)
             cursor.execute(sql, d)  # sql 실행
             print("cursor : ", cursor)
             self.conn.commit()
@@ -139,11 +139,11 @@ class ReserveDao:
         try:
             self.connect()  # db연결
             cursor = self.conn.cursor()  # 사용할 커서 객체 생성
-            sql = 'update reserve set reservenum=%s, rtNm=%s, plainNo=%s, stNm=%s,' \
+            sql = 'update reserve set resNum=%s, rtNm=%s, plainNo=%s, stNm=%s,' \
                   'stNmD=%s, reserve=%s, etc=%s' \
                   'where id = %s'
 
-            d = (a.reservenum, a.rtNm, a.plainNo, a.stNm, a.stNmD, a.reserve, a.etc, a.id)
+            d = (a.resNum, a.rtNm, a.plainNo, a.stNm, a.stNmD, a.reserve, a.etc, a.id)
             cursor.execute(sql, d)  # sql 실행
             self.conn.commit()
 

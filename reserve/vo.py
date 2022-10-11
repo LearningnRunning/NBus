@@ -3,9 +3,9 @@ from datetime import datetime
 
 
 class Reserve:
-    def __init__(self, reservenum: int = 0, resdate: datetime = None, id: str = None, rtNm: str = None,
+    def __init__(self, resNum: int = 0, resdate: datetime = None, id: str = None, rtNm: str = None,
                  plainNo: str = None, stNm: str = None, stNmD: str = None, reserve: str = None, etc: str = None):
-        self.reservenum = reservenum
+        self.resNum = resNum
         self.resdate = resdate
         self.id = id
         self.rtNm = rtNm  # 노선명
@@ -17,7 +17,7 @@ class Reserve:
 
 
     def __str__(self): #toString()
-        return 'reservenum :'+self.reservenum+ '/ '+ 'resdate :'+self.resdate+ '/ '+'id :'+self.id+' / '\
+        return 'resNum :'+self.resNum+ '/ '+ 'resdate :'+self.resdate+ '/ '+'id :'+self.id+' / '\
                + 'rtNm :' +self.rtNm+ ' / '\
                +'plainNo :' +self.plainNo+ ' / '+ 'stNm :' +self.stNm+ ' / ' + 'stNmD :' +self.stNmD+ ' / '\
                +'reserve :' +self.reserve+ ' / ' +'etc :' +self.etc

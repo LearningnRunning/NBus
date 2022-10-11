@@ -67,6 +67,26 @@ class Bus2:
         s += '두번째 도착예정버스의 막차여부: ' + self.isLast2 + '\n'
         return s
 
+class station1:
+    def __init__(self, arsId=None, gpsX=None, gpsY=None, stationNm=None,stationId=None, dist=None):
+        self.arsId = arsId  # 정류소 번호
+        self.gpsX = gpsX # 정류소 좌표X (GRS80)
+        self.gpsY = gpsY	 # 정류소 좌표Y (GRS80)
+        self.stationNm = stationNm  # 정류소명
+        self.stationId = stationId  # 정류소 고유 ID
+        self.dist = dist	  # 거리
+    def __str__(self):
+        s = ''
+        s += '정류소 번호' + self.arsId + '\n'  # 확인 필요
+        s += '정류소 좌표X' + self.gpsX + '\n'  # 확인 필요
+        s += '정류소 좌표Y' + self.gpsY + '\n'
+        s += '정류소명' + self.stationNm + '\n'
+        s += '정류소 고유 ID' + self.stationId + '\n'
+        s += '거리' + self.dist + '\n'
+
+
+        return s
+
 class Bus3:
     def __init__(self,  busRouteId=None, seq=None, stationNm=None, direction=None,
                  gpsX=None, gpsY=None, busRouteNm=None):

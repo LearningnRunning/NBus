@@ -77,9 +77,9 @@ def arrinfo(paramId):
     return render_template('bus/res_arr.html', res=res)
 
 
-# @bp.route('/reservationinfo/<string:stationNm>', methods=['GET'])
-# def reservationinfo(stationNm):
-#
-#
-#     return render_template('bus/reservationinfo.html')
+@bp.route('/reservationinfo/<string:stationNm>', methods=['GET'])
+def reservationinfo(stationNm):
+
+
+    return render_template('bus/reservationinfo.html')
 

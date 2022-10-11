@@ -1,4 +1,4 @@
-#!/Users/j/Desktop/projects/Shall_we_go/NBus/venv/bin/python
+#!/Users/j/git/NBus/venv/bin/python
 # -*- coding: utf-8 -*-
 import re
 import sys

@@ -1,6 +1,6 @@
 # Setting all environment variables for the venv
 let path-name = (if ((sys).host.name == "Windows") { "Path" } { "PATH" })
-let virtual-env = "/Users/j/Desktop/projects/Shall_we_go/NBus/venv"
+let virtual-env = "/Users/j/git/NBus/venv"
 let bin = "bin"
 let path-sep = ":"
 
@@ -38,4 +38,4 @@ let-env PROMPT_COMMAND = $new_prompt
 # We are using alias as the function definitions because only aliases can be
 # removed from the scope
 alias pydoc = python -m pydoc
-alias deactivate = source "/Users/j/Desktop/projects/Shall_we_go/NBus/venv/bin/deactivate.nu"
+alias deactivate = source "/Users/j/git/NBus/venv/bin/deactivate.nu"
